@@ -1,5 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Hero } from '../hero';
+import { MessageService } from '../message.service';
+
 
 @Component({
   selector: 'app-hero-detail',
@@ -7,11 +9,12 @@ import { Hero } from '../hero';
   styleUrls: ['./hero-detail.component.css']
 })
 export class HeroDetailComponent implements OnInit {
+
   @Input() hero: Hero | undefined;
 
-  constructor() { }
+  constructor(public messageService: MessageService) {}
 
-  ngOnInit() {
+  ngOnInit(): void {
   }
 
 }
